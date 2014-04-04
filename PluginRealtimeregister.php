@@ -4,8 +4,8 @@ require_once 'library/CE/NE_MailGateway.php';
 
 class PluginRealtimeregister extends RegistrarPlugin
 {
-    var $api_url = "https://httpapi.yoursrs.com/v1/";
-    var $api_url_test = "https://httpapi.realtimeregister-ote.com/v1/";
+    var $api_url = "https://http.api.yoursrs.com/v1/";
+    var $api_url_test = "https://http.api.yoursrs-ote.com/v1/";
     var $country_codes = array( 'US' => '1', 'CA' => '1', 'EG' => '20', 'MA' => '212', 'EH' => '212', 'DZ' => '213', 'TN' => '216', 'LY' => '218', 'GM' => '220', 'SN' => '221', 'MR' => '222', 'ML' => '223', 'GN' => '224', 'CI' => '225', 'BF' => '226', 'NE' => '227', 'TG' => '228', 'BJ' => '229', 'MU' => '230', 'LR' => '231', 'SL' => '232', 'GH' => '233', 'NG' => '234', 'TD' => '235', 'CF' => '236', 'CM' => '237', 'CV' => '238', 'ST' => '239', 'GQ' => '240', 'GA' => '241', 'CG' => '242', 'CD' => '243', 'AO' => '244', 'GW' => '245', 'IO' => '246', 'AC' => '247', 'SC' => '248', 'SD' => '249', 'RW' => '250', 'ET' => '251', 'SO' => '252', 'QS' => '252', 'DJ' => '253', 'KE' => '254', 'TZ' => '255', 'UG' => '256', 'BI' => '257', 'MZ' => '258', 'ZM' => '260', 'MG' => '261', 'RE' => '262', 'YT' => '262', 'ZW' => '263', 'NA' => '264', 'MW' => '265', 'LS' => '266', 'BW' => '267', 'SZ' => '268', 'KM' => '269', 'ZA' => '27', 'SH' => '290', 'TA' => '290', 'ER' => '291', 'AW' => '297', 'FO' => '298', 'GL' => '299', 'GR' => '30', 'NL' => '31', 'BE' => '32', 'FR' => '33', 'ES' => '34', 'GI' => '350', 'PT' => '351', 'LU' => '352', 'IE' => '353', 'IS' => '354', 'AL' => '355', 'MT' => '356', 'CY' => '357', 'FI' => '358', 'AX' => '358', 'BG' => '359', 'HU' => '36', 'LT' => '370', 'LV' => '371', 'EE' => '372', 'MD' => '373', 'AM' => '374', 'QN' => '374', 'BY' => '375', 'AD' => '376', 'MC' => '377', 'SM' => '378', 'VA' => '379', 'UA' => '380', 'RS' => '381', 'ME' => '382', 'HR' => '385', 'SI' => '386', 'BA' => '387', 'EU' => '388', 'MK' => '389', 'IT' => '39', 'VA' => '39', 'RO' => '40', 'CH' => '41', 'CZ' => '420', 'SK' => '421', 'LI' => '423', 'AT' => '43', 'GB' => '44', 'GG' => '44', 'IM' => '44', 'JE' => '44', 'DK' => '45', 'SE' => '46', 'NO' => '47', 'SJ' => '47', 'PL' => '48', 'DE' => '49', 'FK' => '500', 'BZ' => '501', 'GT' => '502', 'SV' => '503', 'HN' => '504', 'NI' => '505', 'CR' => '506', 'PA' => '507', 'PM' => '508', 'HT' => '509', 'PE' => '51', 'MX' => '52', 'CU' => '53', 'AR' => '54', 'BR' => '55', 'CL' => '56', 'CO' => '57', 'VE' => '58', 'GP' => '590', 'BL' => '590', 'MF' => '590', 'BO' => '591', 'GY' => '592', 'EC' => '593', 'GF' => '594', 'PY' => '595', 'MQ' => '596', 'SR' => '597', 'UY' => '598', 'AN' => '599', 'MY' => '60', 'AU' => '61', 'CX' => '61', 'CC' => '61', 'ID' => '62', 'PH' => '63', 'NZ' => '64', 'SG' => '65', 'TH' => '66', 'TL' => '670', 'NF' => '672', 'AQ' => '672', 'BN' => '673', 'NR' => '674', 'PG' => '675', 'TO' => '676', 'SB' => '677', 'VU' => '678', 'FJ' => '679', 'PW' => '680', 'WF' => '681', 'CK' => '682', 'NU' => '683', 'WS' => '685', 'KI' => '686', 'NC' => '687', 'TV' => '688', 'PF' => '689', 'TK' => '690', 'FM' => '691', 'MH' => '692', 'RU' => '7', 'KZ' => '7', 'XT' => '800', 'XS' => '808', 'JP' => '81', 'KR' => '82', 'VN' => '84', 'KP' => '850', 'HK' => '852', 'MO' => '853', 'KH' => '855', 'LA' => '856', 'CN' => '86', 'XN' => '870', 'PN' => '872', 'XP' => '878', 'BD' => '880', 'XG' => '881', 'XV' => '882', 'XL' => '883', 'TW' => '886', 'XD' => '888', 'TR' => '90', 'QY' => '90', 'IN' => '91', 'PK' => '92', 'AF' => '93', 'LK' => '94', 'MM' => '95', 'MV' => '960', 'LB' => '961', 'JO' => '962', 'SY' => '963', 'IQ' => '964', 'KW' => '965', 'SA' => '966', 'YE' => '967', 'OM' => '968', 'PS' => '970', 'AE' => '971', 'IL' => '972', 'PS' => '972', 'BH' => '973', 'QA' => '974', 'BT' => '975', 'MN' => '976', 'NP' => '977', 'XR' => '979', 'IR' => '98', 'XC' => '991', 'TJ' => '992', 'TM' => '993', 'AZ' => '994', 'QN' => '994', 'GE' => '995', 'KG' => '996', 'UZ' => '998' );
 
     var $supportsNamesuggest = false;
@@ -33,7 +33,7 @@ class PluginRealtimeregister extends RegistrarPlugin
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
 
-        $cafile = dirname(__FILE__) . "/AddTrustExternalCARoot.crt";
+        $cafile = __DIR__ . '/../../../library/cacert.pem';
         if (file_exists($cafile)) {
             curl_setopt($curl, CURLOPT_CAINFO, $cafile);
         }
@@ -49,7 +49,7 @@ class PluginRealtimeregister extends RegistrarPlugin
             $curl_error = "Curl errno " . curl_errno($curl) . ": " . curl_error($curl);
             $msg = $this->_debug($url, $params, array("Could not connect to RealtimeRegister API.", $curl_error));
             curl_close($curl);
-            return new NE_Error($msg, 132);
+            return new CE_Error($msg, 132);
         }
 
         /* Try to decode the response */
@@ -60,7 +60,7 @@ class PluginRealtimeregister extends RegistrarPlugin
         /* Response could not be decoded */
         if (!$response) {
             $msg = $this->_debug($url, $params, "Received invalid response. Please try again.");
-            return new NE_Error($msg, 132);
+            return new CE_Error($msg, 132);
         }
 
         /* An error occurred */
@@ -222,14 +222,16 @@ class PluginRealtimeregister extends RegistrarPlugin
 
         $status = '';
 
-        if (is_a($response, "NE_Error")) {
+        CE_Lib::log(4, print_r($response, true));
+
+          if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
 
             switch ($response->errCode) {
                 case 132:
                 case 1001:
                     CE_Lib::log(4, 'Error: ' . $response->errMessage);
-                    $status = 5; 
+                    $status = 5;
                 default:
                     CE_Lib::log(4, 'Error: ' . $response->errMessage);
                     $status = 3;
@@ -253,9 +255,10 @@ class PluginRealtimeregister extends RegistrarPlugin
         if ( $status == '' ) {
             $status = 1;
         }
-        $domains[] = array("tld"=>$params['sld'],"domain"=>$params['tld'],"status"=>$status);
+        $domains[] = array("tld"=>$params['tld'],"domain"=>$params['sld'],"status"=>$status);\
+        CE_Lib::log(4, $domains);
         return array("result"=>$domains);
-        
+
     }
 
 
@@ -274,7 +277,7 @@ function getContactInformation( $params )
 
     $response = $this->_sendRequest($curl_url_domain, $curl_params);
 
-    if (is_a($response, "NE_Error")) {
+    if (is_a($response, "CE_Error")) {
         return $response;
     }
 
@@ -290,7 +293,7 @@ function getContactInformation( $params )
     foreach ($types as $type_ce => $type_srs) {
         $curl_url_contact = $this->_getURL() . "contacts/" . urlencode($response->response->$type_srs) . "/info";
         $response_contact = $this->_sendRequest($curl_url_contact, $curl_params);
-        if (is_a($response_contact, "NE_Error")) {
+        if (is_a($response_contact, "CE_Error")) {
             return $response;
         }
 
@@ -325,7 +328,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             return $response;
         }
 
@@ -354,7 +357,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             return $response;
         }
 
@@ -382,7 +385,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             return $response;
         }
 
@@ -503,7 +506,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
         return array(1);
@@ -520,7 +523,7 @@ function getContactInformation( $params )
      * Communicates with the registrar API to send the transfer key to registrant.
      *
      * @param array $params: Contains the values for the variables defined in getVariables(), plus: tld, sld
-     * @return NE_Error on failure
+     * @return CE_Error on failure
      */
     function sendTransferKey( $params )
     {
@@ -530,14 +533,14 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
 
         $curl_url_contact = $this->_getURL() . "contacts/" . urlencode($response->response->registrant) . "/info";
         $response_contact = $this->_sendRequest($curl_url_contact, $curl_params);
 
-        if (is_a($response_contact, "NE_Error")) {
+        if (is_a($response_contact, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
 
@@ -560,7 +563,7 @@ function getContactInformation( $params )
      * Communicates with the registrar API to set autorenew for a given domain.
      *
      * @param array $params: Contains the values for the variables defined in getVariables(), plus: tld, sld
-     * @return NE_Error on failure
+     * @return CE_Error on failure
      */
     function setAutorenew( $params )
     {
@@ -572,7 +575,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url_domain, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
     }
@@ -590,7 +593,7 @@ function getContactInformation( $params )
         $curl_url_domain = $this->_getURL() . "domains/" . urlencode($domain) . "/info";
         $response = $this->_sendRequest($curl_url_domain, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
 
@@ -618,7 +621,7 @@ function getContactInformation( $params )
 
         $response_contact = $this->_sendRequest($curl_url_contact, $curl_params);
 
-        if (is_a($response_contact, "NE_Error")) {
+        if (is_a($response_contact, "CE_Error")) {
             throw new Exception($response_contact->errMessage);
         }
     }
@@ -640,7 +643,7 @@ function getContactInformation( $params )
         }
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
     }
@@ -649,7 +652,7 @@ function getContactInformation( $params )
      * Communicates with the registrar API to retrieve the dns information for a given domain.
      *
      * @param array $params: Contains the values for the variables defined in getVariables(), plus: tld, sld
-     * @return NE_Error on failure
+     * @return CE_Error on failure
      */
     function setRegistrarLock( $params )
     {
@@ -660,7 +663,7 @@ function getContactInformation( $params )
 
         $response = $this->_sendRequest($curl_url, $curl_params);
 
-        if (is_a($response, "NE_Error")) {
+        if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
         }
     }
