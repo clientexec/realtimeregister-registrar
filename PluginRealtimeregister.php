@@ -222,8 +222,6 @@ class PluginRealtimeregister extends RegistrarPlugin
 
         $status = '';
 
-        CE_Lib::log(4, print_r($response, true));
-
           if (is_a($response, "CE_Error")) {
             throw new Exception($response->errMessage);
 
