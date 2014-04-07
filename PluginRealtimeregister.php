@@ -219,7 +219,6 @@ class PluginRealtimeregister extends RegistrarPlugin
         $curl_url = $this->_getURL() . "domains/" . urlencode($domain) . "/check";
 
         $response = $this->_sendRequest($curl_url, $curl_params);
-
         $status = '';
 
           if (is_a($response, "CE_Error")) {
@@ -250,9 +249,7 @@ class PluginRealtimeregister extends RegistrarPlugin
                     $status = 2;
             }
         }
-        if ( $status == '' ) {
-            $status = 1;
-        }
+
         $domains[] = array("tld"=>$params['tld'],"domain"=>$params['sld'],"status"=>$status);\
         CE_Lib::log(4, $domains);
         return array("result"=>$domains);
