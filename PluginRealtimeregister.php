@@ -238,6 +238,8 @@ class PluginRealtimeregister extends RegistrarPlugin
         /* Check domain availability */
         if ($response->response->$domain->avail == 1) {
             $status = 0;
+        } else if ($response->response->$domain->avail == 0) {
+            $status = 1;
         }
 
         if (isset($response->response->$domain->reason)) {
