@@ -131,69 +131,69 @@ class PluginRealtimeregister extends RegistrarPlugin
     function getVariables()
     {
         $variables = array(
-            /*T*/'Plugin Name'/*/T*/=> array (
+            lang('Plugin Name')=> array (
                 'type'          =>'hidden',
-                'description'   =>/*T*/'How CE sees this plugin (not to be confused with the Signup Name)'/*/T*/,
-                'value'         =>/*T*/'Realtime Register'/*/T*/,
+                'description'   =>lang('How CE sees this plugin (not to be confused with the Signup Name)'),
+                'value'         =>lang('Realtime Register'),
                 ),
-            /*T*/'Dealer'/*/T*/     => array(
+            lang('Dealer')     => array(
                 'type'          => 'text',
-                'description'   => /*T*/'Enter your username for your Realtime Register dealer account.'/*/T*/,
+                'description'   => lang('Enter your username for your Realtime Register dealer account.'),
                 'value'         => '',
                 ),
-            /*T*/'Password'/*/T*/   => array(
+            lang('Password')   => array(
                 'type'          => 'password',
-                'description'   => /*T*/'Enter your Realtime Register dealer password.'/*/T*/,
+                'description'   => lang('Enter your Realtime Register dealer password.'),
                 'value'         => '',
                 ),
-            /*T*/'Handle'/*/T*/     => array(
+            lang('Handle')     => array(
                 'type'          => 'text',
-                'description'   => /*T*/'Enter your default contact handle name for Admin, Billing, Tech Contact.'/*/T*/,
+                'description'   => lang('Enter your default contact handle name for Admin, Billing, Tech Contact.'),
                 'value'         => '',
                 ),
-            /*T*/'NS 1'/*/T*/     => array(
+            lang('NS 1')     => array(
                 'type'          => 'text',
-                'description'   => /*T*/'Enter Name Server #1, used in stand alone domains.'/*/T*/,
+                'description'   => lang('Enter Name Server #1, used in stand alone domains.'),
                 'value'         => '',
                 ),
-            /*T*/'NS 2'/*/T*/     => array(
+            lang('NS 2')     => array(
                 'type'          => 'text',
-                'description'   => /*T*/'Enter Name Server #1, used in stand alone domains.'/*/T*/,
+                'description'   => lang('Enter Name Server #1, used in stand alone domains.'),
                 'value'         => '',
                 ),
-            /*T*/'PhoneFormat'/*/T*/     => array(
+            lang('PhoneFormat')     => array(
                 'type'          => 'text',
-                'description'   => /*T*/"The format of stored phone numbers.<br /><br />\n%c = country code (eg. 31 for NL)<br />\n%a = area code (eg. 38 for Zwolle)<br />\n%s = subscriber number (eg. 4530759)<br /><br />\nExample<br />\n+31 (0) 38 4530759 --> +%c (0) %a %s<br />\n<a href=\"http://www.realtimeregister.com/en/content/phone_number_format/\" target=\"_blank\">Click here for more information.</a>"/*/T*/,
+                'description'   => lang("The format of stored phone numbers.<br /><br />\n%c = country code (eg. 31 for NL)<br />\n%a = area code (eg. 38 for Zwolle)<br />\n%s = subscriber number (eg. 4530759)<br /><br />\nExample<br />\n+31 (0) 38 4530759 --> +%c (0) %a %s<br />\n<a href=\"http://www.realtimeregister.com/en/content/phone_number_format/\" target=\"_blank\">Click here for more information.</a>"),
                 'value'         => '',
                 ),
-            /*T*/'TestMode'/*/T*/   => array(
+            lang('TestMode')   => array(
                 'type'          => 'yesno',
-                'description'   => /*T*/'Enable this to use the testing environment of Realtime Register.'/*/T*/,
+                'description'   => lang('Enable this to use the testing environment of Realtime Register.'),
                 'value'         => '',
                 ),
-            /*T*/'DebugMode'/*/T*/   => array(
+            lang('DebugMode')   => array(
                 'type'          => 'yesno',
-                'description'   => /*T*/'Debug mode provides extensive information when an error occurs. You should only enable this for debugging purposes!'/*/T*/,
+                'description'   => lang('Debug mode provides extensive information when an error occurs. You should only enable this for debugging purposes!'),
                 'value'         => '',
                 ),
-            /*T*/'DebugMail'/*/T*/   => array(
+            lang('DebugMail')   => array(
                 'type'          => 'text',
-                'description'   => /*T*/'E-mail debug messages to this address.'/*/T*/,
+                'description'   => lang('E-mail debug messages to this address.'),
                 'value'         => '',
                 ),
-            /*T*/'Supported Features'/*/T*/  => array(
+            lang('Supported Features')  => array(
                     'type'          => 'label',
-                    'description'   => '* './*T*/'TLD Lookup'/*/T*/.'<br>* './*T*/'Domain Registration'/*/T*/.' <br>* './*T*/'Get / Set Auto Renew Status'/*/T*/.' <br>* './*T*/'Get / Set Contact Information'/*/T*/.' <br>* './*T*/'Get Registrar Lock'/*/T*/.' <br>* './*T*/'Send Transfer Key'/*/T*/,
+                    'description'   => '* '.lang('TLD Lookup').'<br>* '.lang('Domain Registration').' <br>* '.lang('Get / Set Auto Renew Status').' <br>* '.lang('Get / Set Contact Information').' <br>* '.lang('Get Registrar Lock').' <br>* '.lang('Send Transfer Key'),
                     'value'         => ''
                     ),
-            /*T*/'Actions'/*/T*/ => array (
+            lang('Actions') => array (
                 'type'          => 'hidden',
-                'description'   => /*T*/'Current actions that are active for this plugin (when a domain isn\'t registered)'/*/T*/,
+                'description'   => lang('Current actions that are active for this plugin (when a domain isn\'t registered)'),
                 'value'         => 'Register'
                 ),
-            /*T*/'Registered Actions'/*/T*/ => array (
+            lang('Registered Actions') => array (
                 'type'          => 'hidden',
-                'description'   => /*T*/'Current actions that are active for this plugin (when a domain is registered)'/*/T*/,
+                'description'   => lang('Current actions that are active for this plugin (when a domain is registered)'),
                 'value'         => 'SendTransferKey (Send Auth Info),Cancel',
                 )
             );
