@@ -163,7 +163,7 @@ class PluginRealtimeregister extends RegistrarPlugin
                 ),
             lang('PhoneFormat')     => array(
                 'type'          => 'text',
-                'description'   => lang("The format of stored phone numbers.<br /><br />\n%c = country code (eg. 31 for NL)<br />\n%a = area code (eg. 38 for Zwolle)<br />\n%s = subscriber number (eg. 4530759)<br /><br />\nExample<br />\n+31 (0) 38 4530759 --> +%c (0) %a %s<br />\n<a href=\"http://www.realtimeregister.com/en/content/phone_number_format/\" target=\"_blank\">Click here for more information.</a>"),
+                'description'   => lang("The format of stored phone numbers.<br /><br />\n%c = country code (eg. 31 for NL)<br />\n%a = area code (eg. 38 for Zwolle)<br />\n%s = subscriber number (eg. 4530759)<br /><br />\nExample<br />\n+31 (0) 38 4530759 --> +%c (0) %a %s<br />"),
                 'value'         => '',
                 ),
             lang('TestMode')   => array(
