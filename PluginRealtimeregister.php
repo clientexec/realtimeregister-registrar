@@ -260,7 +260,7 @@ class PluginRealtimeregister extends RegistrarPlugin
             }
         }
 
-        $domains[] = array("tld"=>$params['tld'],"domain"=>$params['sld'],"status"=>$status);\
+        $domains[] = array("tld"=>$params['tld'],"domain"=>$params['sld'],"status"=>$status);
         CE_Lib::log(4, $domains);
         return array("result"=>$domains);
     }
